@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grover/homebridge-ranger.git"
+    "url": "git+https://github.com/palasinio/homebridge-ranger.git"
   },
   "keywords": [
     "HomeKit",
