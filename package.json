@@ -43,7 +43,7 @@
     "clone": "^2.1.2",
     "curve25519-n": "^1.5.0",
     "debug": "^3.2.6",
-    "ed25519": "git+https://github.com/orlp/ed25519.git",
+    "ed25519": "0.0.4",
     "fast-srp-hap": "^1.0.1",
     "hap-nodejs": "^0.4.48",
     "moment": "^2.24.0",
