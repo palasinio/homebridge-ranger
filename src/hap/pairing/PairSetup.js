@@ -309,7 +309,7 @@ class PairSetup {
     var outputKey = hkdf("sha512", accessorySignSalt, this._srpSharedSecret, accessorySignInfo, 32);
 
     var material = Buffer.concat([outputKey, accessoryPairingID, accessoryLTPK]);
-    if (!ed25519.Verify(material, accessorySignature, accessoryLTPK)) {
+    if (!ed25519.verify(material, accessorySignature, accessoryLTPK)) {
       this.log('Invalid accessory signature');
       return;
     }
