@@ -193,7 +193,7 @@ class PairVerify {
     const rangerLTPK = Buffer.from(this._accessoryDatabase.pairing.rangerLTPK, 'hex');
 
     const accessoryInfo = Buffer.concat([this._accessoryPublicKey, accessoryPairingID, this._verifyPublicKey]);
-    if (!ed25519.Verify(accessoryInfo, accessorySignature, accessoryLTPK)) {
+    if (!ed25519.verify(accessoryInfo, accessorySignature, accessoryLTPK)) {
       this._error = 'Accessory signature verification failed';
     }
   }
