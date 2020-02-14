@@ -1,6 +1,5 @@
 
 const version = require('../package.json').version;
-const ed25519=require("ed25519-wasm-pro")
 
 const BleExecutor = require('ble-executor');
 
