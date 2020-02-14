@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const srp = require('fast-srp-hap');
 const hkdf = require('../crypto/hkdf').HKDF;
 const encryption = require('../crypto/encryption');
-const ed25519 = require('ed25519');
+const ed25519 = require('ed25519-wasm-pro');
 
 const uuid = require('uuid/v4');
 
@@ -128,7 +128,7 @@ class PairSetup {
   getM5Request() {
 
     const seed = crypto.randomBytes(32);
-    const keyPair = ed25519.MakeKeypair(seed);
+    const keyPair = ed25519.createKeyPair(seed);
     this._rangerPairingID = Buffer.from(uuid());
     this._rangerLTSK = keyPair.privateKey;
     this._rangerLTPK = keyPair.publicKey;
