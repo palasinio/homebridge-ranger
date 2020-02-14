@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const srp = require('fast-srp-hap');
 const hkdf = require('../crypto/hkdf').HKDF;
 const encryption = require('../crypto/encryption');
-const ed25519 = require('ed25519');
+const ed25519 = require('ed25519-wasm-pro');
 
 const uuid = require('uuid/v4');
 
