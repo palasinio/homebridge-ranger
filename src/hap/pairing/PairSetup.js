@@ -140,7 +140,7 @@ class PairSetup {
 
     const iOSDeviceInfo = Buffer.concat([iOSDeviceX, this._rangerPairingID, this._rangerLTPK]);
 
-    const iOSDeviceSignature = ed25519.Sign(iOSDeviceInfo, this._rangerLTSK);
+    const iOSDeviceSignature = ed25519.sign(iOSDeviceInfo, this._rangerLTSK);
 
     let subtlv = {};
     subtlv[TLVType.Identifier] = this._rangerPairingID;
