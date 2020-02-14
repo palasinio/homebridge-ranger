@@ -94,7 +94,7 @@ class PairVerify {
       this._accessoryPublicKey
     ]);
 
-    const controllerSignature = ed25519.Sign(
+    const controllerSignature = ed25519.sign(
       controllerInfo,
       Buffer.from(this._accessoryDatabase.pairing.rangerLTSK, 'hex'));
 
