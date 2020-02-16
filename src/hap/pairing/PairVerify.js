@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const srp = require('fast-srp-hap');
 const hkdf = require('../crypto/hkdf').HKDF;
 const encryption = require('../crypto/encryption');
-const ed25519 = require('ed25519-wasm-pro');
+const ed25519 = require('ed25519');
 
 const uuid = require('uuid/v4');
 
@@ -94,7 +94,7 @@ class PairVerify {
       this._accessoryPublicKey
     ]);
 
-    const controllerSignature = ed25519.sign(
+    const controllerSignature = ed25519.Sign(
       controllerInfo,
       Buffer.from(this._accessoryDatabase.pairing.rangerLTSK, 'hex'));
 
@@ -193,7 +193,7 @@ class PairVerify {
     const rangerLTPK = Buffer.from(this._accessoryDatabase.pairing.rangerLTPK, 'hex');
 
     const accessoryInfo = Buffer.concat([this._accessoryPublicKey, accessoryPairingID, this._verifyPublicKey]);
-    if (!ed25519.verify(accessoryInfo, accessorySignature, accessoryLTPK)) {
+    if (!ed25519.Verify(accessoryInfo, accessorySignature, accessoryLTPK)) {
       this._error = 'Accessory signature verification failed';
     }
   }
