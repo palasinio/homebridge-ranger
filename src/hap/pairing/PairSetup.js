@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const srp = require('fast-srp-hap');
 const hkdf = require('../crypto/hkdf').HKDF;
 const encryption = require('../crypto/encryption');
-const ed25519 = require('ed25519-wasm-pro');
+const ed25519 = require('ed25519');
 
 const uuid = require('uuid/v4');
 
@@ -128,7 +128,7 @@ class PairSetup {
   getM5Request() {
 
     const seed = crypto.randomBytes(32);
-    const keyPair = ed25519.createKeyPair(seed);
+    const keyPair = ed25519.MakeKeypair(seed);
     this._rangerPairingID = Buffer.from(uuid());
     this._rangerLTSK = keyPair.privateKey;
     this._rangerLTPK = keyPair.publicKey;
@@ -140,7 +140,7 @@ class PairSetup {
 
     const iOSDeviceInfo = Buffer.concat([iOSDeviceX, this._rangerPairingID, this._rangerLTPK]);
 
-    const iOSDeviceSignature = ed25519.sign(iOSDeviceInfo, this._rangerLTSK);
+    const iOSDeviceSignature = ed25519.Sign(iOSDeviceInfo, this._rangerLTSK);
 
     let subtlv = {};
     subtlv[TLVType.Identifier] = this._rangerPairingID;
@@ -309,7 +309,7 @@ class PairSetup {
     var outputKey = hkdf("sha512", accessorySignSalt, this._srpSharedSecret, accessorySignInfo, 32);
 
     var material = Buffer.concat([outputKey, accessoryPairingID, accessoryLTPK]);
-    if (!ed25519.verify(material, accessorySignature, accessoryLTPK)) {
+    if (!ed25519.Verify(material, accessorySignature, accessoryLTPK)) {
       this.log('Invalid accessory signature');
       return;
     }
