@@ -1,6 +1,6 @@
 {
   "name": "homebridge-ranger",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "A HomeKit range extender for Bluetooth Low Energy (BLE) accessories.",
   "main": "src/index.js",
   "directories": {
@@ -33,19 +33,17 @@
   },
   "homepage": "https://github.com/grover/homebridge-ranger#readme",
   "engines": {
-    "node": ">=8.9.3",
-    "homebridge": ">=0.4.35"
+    "node": ">=10.17.0",
+    "homebridge": ">=1.0.4"
   },
   "dependencies": {
     "ble-executor": "git+https://github.com/palasinio/ble-executor.git",
     "buffer-shims": "^1.0.0",
     "chalk": "^3.0.0",
-    "clone": "^2.1.2",
     "curve25519-n": "^1.5.0",
     "debug": "^4.1.1",
     "ed25519": "https://github.com/pokt-network/ed25519.git",
     "fast-srp-hap": "^1.0.1",
-    "hap-nodejs": "^0.5.6",
     "moment": "^2.24.0",
     "sequential-task-queue": "^1.2.1",
     "uuid": "^3.4.0"
