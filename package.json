@@ -37,7 +37,7 @@
     "homebridge": ">=1.0.4"
   },
   "dependencies": {
-    "hap-nodejs": "^0.8.2",
+    "hap-nodejs": "^0.7",
     "ble-executor": "git+https://github.com/palasinio/ble-executor.git",
     "buffer-shims": "^1.0.0",
     "chalk": "^3.0.0",
