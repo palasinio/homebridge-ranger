@@ -12,8 +12,8 @@
     "scan": "DEBUG=* homebridge -D -U `cd ./tests/scan && pwd` -P `pwd`"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/palasinio/homebridge-ranger.git"
+    "type": "https",
+    "url": "https://github.com/palasinio/homebridge-ranger.git"
   },
   "keywords": [
     "HomeKit",
