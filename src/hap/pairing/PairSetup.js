@@ -40,7 +40,7 @@ class PairSetup {
     this._encryptionKey;
     this._error = undefined;
     this._key = crypto.randomBytes(32);
-    this._params = srp.params["3072"];
+    this._params = srp.SRP.params["hap"];
     this._pin = pin;
     this._srp;
     this._rangerPairingID;
@@ -101,7 +101,7 @@ class PairSetup {
     const identity = Buffer.from('Pair-Setup');
     const password = Buffer.from(this._pin);  // Accessory pin
 
-    this._srp = new srp.Client(this._params, this._salt, identity, password, this._key);
+    this._srp = new srp.SrpClient(this._params, this._salt, identity, password, this._key);
     this._srp.setB(this._accessoryPublicKey);
 
     this._rangerPublicKey = this._srp.computeA();
