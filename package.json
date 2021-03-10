@@ -43,7 +43,7 @@
     "chalk": "^3.0.0",
     "curve25519-n": "^1.5.0",
     "debug": "^4.2.0",
-    "ed25519": "https://github.com/dazoe/ed25519.git",
+    "ed25519": "https://github.com/pokt-network/ed25519.git",
     "fast-srp-hap": "^2.0.2",
     "moment": "^2.26.0",
     "sequential-task-queue": "^1.2.1",
