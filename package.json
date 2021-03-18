@@ -41,7 +41,7 @@
     "ble-executor": "git+https://github.com/palasinio/ble-executor.git",
     "buffer-shims": "^1.0.0",
     "chalk": "^4.1.0",
-    "curve25519-n": "git+https://github.com/volschin/node-curve25519",
+    "curve25519-n": "git+https://github.com/volschin/node-curve25519.git",
     "debug": "^4.3.2",
     "ed25519": "https://github.com/dazoe/ed25519.git",
     "fast-srp-hap": "^2.0.3",
